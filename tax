@@ -1,0 +1,90 @@
+import  java.util.Scanner;
+public class ComputeTax {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		 System.out.println("please enter your name: ");
+		 String name= input.nextLine();
+		 System.out.println(name +" please enter your filing status ( 1-single 2-married ):  ");
+		 int i = input.nextInt();
+			 
+			 
+		      if(i==1) {
+		    		 // single status
+		    	  System.out.println( name + " enter yor taxable income: ");
+					 double income = input.nextDouble();
+					 input.nextLine();
+				     if( income < 0 ) {
+				    	 //income must be positive
+				    	 System.out.println("income must be positive"); 
+				    	 }
+		    		 if (income < 8350 ) {
+		    			 // poor single
+		    			 System.out.println(name + " you should pay " +(income*0.1));
+		    			 System.out.println("calculation is based on scheme of single filing");
+		    			 System.out.println("part I :" +(income*0.1));
+		    		 }
+		    		 else if((income > 8350) && (income<33950)) {
+		    			 //median single
+		    			 System.out.println(name +" you should pay " +( (8350*0.1) + ((income-8350)*0.15)) );
+		    			 System.out.println("calculation is based on scheme of single filing");
+		    			 System.out.println("part I :" +(8350*0.1));
+		    			 System.out.println("part II :" +((income-8350)*0.15));
+		    			 
+		    		 }
+		    		 else {
+		    			 //rich single
+		    			 System.out.println(name +" you should pay " + ((8350*0.1) + (33950-8350)*0.15 + (income-33950)*0.25)  );
+		    			 System.out.println("calculation is based on scheme of single filing");
+		    			 System.out.println("part I :" + (8350*0.1));
+		    			 System.out.println("part II :" +((33950-8350)*0.15));
+		    			 System.out.println("part III :" +((income-33950)*0.25));
+		    			 
+		    			 
+		    		 }
+		    	 }
+		    	 else if(i==2) {
+		    		 // married status
+		    		 System.out.println( name+" enter yor taxable income: ");
+					 double income = input.nextDouble();
+					 input.nextLine();
+				     if( income < 0 ) {
+				    	 //income must be positive
+				    	 System.out.println(" income must be positive"); 
+				    	 }
+		    		 if (income < 16700 ) {
+		    			 // poor married
+		    			 System.out.println(name +" you should pay "+(income*0.1));
+		    			 System.out.println("calculation is based on scheme of married filing");
+		    			 System.out.println("part I :" +(income*0.1));
+		    		 }
+		    		 else if((income > 16701) && (income<67900)) {
+		    			 //median married
+		    			 System.out.println(name + "you should pay" +( (16700*0.1) + ((income-16700)*0.15)) );
+		    			 System.out.println("calculation is based on scheme of married filing");
+		    			 System.out.println("part I :" +(16700*0.1));
+		    			 System.out.println("part II :" +((income-16700)*0.15));
+		    			 
+		    		 }
+		    		 else {
+		    			 //rich married
+		    			 System.out.println(name +" you should pay " + ((16700*0.1) + (67900-16700)*0.15 + (income-67900)*0.25)  );
+		    			 System.out.println("calculation is based on scheme of married filing");
+		    			 System.out.println("part I :" + (16700*0.1));
+		    			 System.out.println("part II :" +((67900-16700)*0.15));
+		    			 System.out.println("part III :" +((income-67900)*0.25));
+		    		 
+		    	 }
+		    	 
+		     }
+		    	 
+		    		 
+		    	 
+		    	 else {
+		    		 System.out.println("illigal status : " +i);
+		              }
+		 input.close();
+	}
+
+}
