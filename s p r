@@ -1,0 +1,200 @@
+import  java.util.Scanner;
+public class RockPaperScissors {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("player1 name: ");
+		String player1 = input.nextLine();
+		System.out.println("player2 name: ");
+		String player2 = input.nextLine();
+		System.out.println(player1+" which one do you want to play? \"r\"  ,\"p\" or \"s\" ");
+		String type1=input.nextLine();
+		if (!(type1.equals("r")||type1.equals("s")||type1.equals("p"))) {
+		 System.out.println(player1 +" error wrong type" ); }
+		else {
+		System.out.println(player2+" which one do you want to play? \"r\"  ,\"p\" or \"s\" ");
+		String type2=input.nextLine();
+	       if (!(type2.equals("r")||type2.equals("s")||type2.equals("p"))) {
+		    System.out.println(player2 +" error wrong type" ); }
+		    else {
+	        //first round if player one wins
+		        if((type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")) || (type1.equals("p") && type2.equals("r"))) {
+			 
+			    System.out.println(player1 +" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+				type1=input.nextLine();
+				System.out.println(player2 +" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			    type2=input.nextLine();
+			         if((type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")) || (type1.equals("p") && type2.equals("r"))) {
+					//in case first player wins second round
+						 System.out.println("game over "+player1+" wins"); 
+						 }
+			         else if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")))
+			    { //in case player 2 wins second round
+			    	
+						 //third round after first player wins his first and has lost second round
+							 System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type1=input.nextLine();
+								System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type2=input.nextLine();
+							  if((type1.equals("p") && type2.equals("r")) || (type1.equals("s") && type2.equals("p")) || (type1.equals("r") && type2.equals("s"))) {
+								// if first player wins third round
+						          System.out.println("game over "+ player1 +" wins");
+									 }
+							   else if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")))
+								//if second player wins third round
+								   System.out.println("game over "+ player2 +" wins");
+							   else {
+								   System.out.println("game over draw");
+							  }
+			    }
+			            else {//third round after player 1 wins first and draw second
+			         	 System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+					     type1=input.nextLine();
+						System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+					    type2=input.nextLine();
+					           if((type1.equals("p") && type2.equals("r")) || (type1.equals("s") && type2.equals("p")) || (type1.equals("r") && type2.equals("s"))) {
+						       // if first plAYER wins third round
+				                System.out.println("game over "+ player1 +" wins");
+						     	 }
+					            else if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s"))) {
+						      //if second player wins third round
+						         System.out.println("game over draw");
+						        }
+					             else {//draw
+						   System.out.println("game over "+ player1 +"wins");
+					   }
+			    }
+		}
+		//second player wins the first round
+		else if((type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("r") && type2.equals("p"))) {
+			//second round begins    
+			System.out.println(player1 +" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+				type1=input.nextLine();
+				System.out.println(player2 +" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			    type2=input.nextLine();
+			    if((type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("r") && type2.equals("p"))) {
+					//in case second player wins second round
+						 System.out.println("game over "+player2+" wins"); 
+						 }
+			    else if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")))
+			    { //in case player1 wins second round
+			    	
+						 //third round after second player wins his first and has lost second round
+							 System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type1=input.nextLine();
+								System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type2=input.nextLine();
+							  if((type1.equals("r") && type2.equals("p")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("s") && type2.equals("r"))) {
+								// if second plAYER wins third round
+						          System.out.println("game over "+ player2 +" wins");
+									 }
+							   else if ((type1.equals("p") && type2.equals("r")) || (type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p"))) {
+								//if first player wins third round
+								   System.out.println("game over "+ player1+" wins");
+							  }
+							   else {
+								   System.out.println("game over draw");
+							  }
+			    }
+			    else {//third round after player 2 wins first and draw second
+			    	 System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+					  type1=input.nextLine();
+						System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+					  type2=input.nextLine();
+					  if((type1.equals("p") && type2.equals("r")) || (type1.equals("s") && type2.equals("p")) || (type1.equals("r") && type2.equals("s"))) {
+						// if first plAYER wins third round
+				          System.out.println("game over draw");
+							 }
+					   else if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s"))) {
+						//if second player wins third round
+						   System.out.println("game over " + player2 +"wins");
+						   }
+					   else {//draw
+						   System.out.println("game over "+ player2 +"wins");
+					   }
+			    }
+		}
+		        
+		else {
+			//first round draw 
+			  System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			  type1=input.nextLine();
+				System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			  type2=input.nextLine();
+			
+			 if ((type1.equals("r") && type2.equals("p")) || (type1.equals("s") && type2.equals("r")) || (type1.equals("p") && type2.equals("s")))
+    { //in case player2 wins second round
+    	
+			 //third round after player 2 wins second round after draw
+				
+			        System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+				  type1=input.nextLine();
+					System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+				  type2=input.nextLine();
+				  if((type1.equals("r") && type2.equals("p")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("s") && type2.equals("r"))) {
+					// if second plAYER wins third round
+			          System.out.println("game over "+ player2 +" wins");
+						 }
+				   else if ((type1.equals("p") && type2.equals("r")) || (type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")))
+					//if first player wins third round
+					   System.out.println("game over draw");
+				   else {
+					   System.out.println("game over " + player2 + "wins");
+				  }
+    }
+    
+		 else if ((type1.equals("p") && type2.equals("r")) || (type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")))
+			    { //in case player1 wins second round after draw
+			    	
+						 //third round after first player draw and won second round
+							 System.out.println(player1+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type1=input.nextLine();
+								System.out.println(player2+" which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+							  type2=input.nextLine();
+							  if((type1.equals("r") && type2.equals("p")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("s") && type2.equals("r"))) {
+								// if second plAYER wins third round
+						          System.out.println("game over draw");
+									 }
+							   else if ((type1.equals("p") && type2.equals("r")) || (type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")))
+								//if first player wins third round
+								   System.out.println("game over "+ player1+" wins");
+							   else {
+								   System.out.println("game over " +player1 + "wins");
+							  }
+							  }
+			 else {
+				 System.out.println(player1+" third which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			 
+			     type1=input.nextLine();
+				System.out.println(player2+"  third which one do you want to play \"r\"  ,\"p\" or \"s\" ");
+			  type2=input.nextLine();
+			  if((type1.equals("r") && type2.equals("p")) || (type1.equals("p") && type2.equals("s")) || (type1.equals("s") && type2.equals("r"))) {
+				// if second plAYER wins third round after draw
+		          System.out.println("game over: " + player2 +" wins ");
+					 }
+			   else if ((type1.equals("p") && type2.equals("r")) || (type1.equals("r") && type2.equals("s")) || (type1.equals("s") && type2.equals("p")))
+				//if first player wins third round
+				   System.out.println("game over "+ player1+" wins");
+			   else {
+				   System.out.println("game over draw");
+			    }
+			 }
+		}
+		
+	
+		       
+			   
+		   
+    }
+}
+		
+		
+		
+		
+		
+		 input.close();
+
+
+	}
+}
