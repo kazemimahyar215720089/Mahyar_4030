@@ -1,0 +1,49 @@
+package lab0part2;
+import java.util.Scanner;
+public class BMI {
+	
+
+	public static void main(String[] args) {
+	
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("enter your name?");
+		String name = input.nextLine();
+		System.out.println(name + " enter your height in inches");
+		int i = input.nextInt();
+		System.out.println(name + " enter your weight in pounds");
+		int p = input.nextInt();
+		
+		double k = (p * 0.45359237 );
+		
+		double m = (i * 0.0254);
+		
+		double BMI =  ((k) / ((m)* (m))) ;
+		input.nextLine();
+		
+		if (BMI < 18.5 ) {
+			System.out.println(name +" you are underweight" + " your BMI is "+ BMI );
+		}
+	
+		else if ((BMI >= 18.5 ) && (BMI <= 25.0 )) {
+		
+			System.out.println(name +" normal " + " your BMI is "+ BMI);
+		}
+		
+		else if ((BMI >= 25.0 ) && (BMI <= 30.0 )) {
+		
+			System.out.println(name +" you are overweight" + " your BMI is "+ BMI );
+		}	
+		
+		else if (BMI >= 30.0 ) {
+			System.out.println(name +" Obese " + " your BMI is " + BMI );
+		}
+	
+		else {
+			System.out.println(" invalid input ");
+		}
+		
+		input.close();
+	}
+}
+
